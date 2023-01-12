@@ -14,7 +14,7 @@ class UsuariosController extends Controller
 {
     public function __construct() {
         $this->middleware('auth')->except(['login']);
-        
+
     }
 
     /**
@@ -27,7 +27,7 @@ class UsuariosController extends Controller
         if(Gate::denies('usuarios-listar')){
             return redirect()->route('home.index');
         }
-        
+
 
         $usuarios = Usuario::all();
         $roles = Rol::all();
@@ -135,5 +135,23 @@ class UsuariosController extends Controller
         $usuario->activo = $usuario->activo?0:1;
         $usuario->save();
         return redirect()->route('usuarios.index');
+    }
+
+    public function actividad()
+    {
+        if(Gate::denies('usuarios-listar')){
+            return redirect()->route('home.index');
+        }
+
+
+        $usuarios = Usuario::orderByDesc('ultimo_login')->get();
+        $roles = Rol::all();
+        return view('usuarios.actividad',compact('usuarios','roles'));
+    }
+
+    public function activaractividad(Usuario $usuario){
+        $usuario->activo = $usuario->activo?0:1;
+        $usuario->save();
+        return redirect()->route('usuarios.actividad');
     }
 }

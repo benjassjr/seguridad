@@ -36,3 +36,6 @@ Route::post('/usuarios',[UsuariosController::class, 'store'])->name('usuarios.st
 Route::delete('/usuarios/{usuario}',[UsuariosController::class, 'destroy'])->name('usuarios.destroy');
 Route::get('/usuarios/{usuario}/edit',[UsuariosController::class, 'edit'])->name('usuarios.edit');
 Route::put('/usuarios/{usuario}',[UsuariosController::class, 'update'])->name('usuarios.update');
+
+Route::get('/actividad',[UsuariosController::class,'actividad'])->name('usuarios.actividad');
+Route::post('/actividad/{usuario}/activar',[UsuariosController::class,'activaractividad'])->name('usuarios.activaractividad');

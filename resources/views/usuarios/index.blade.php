@@ -224,7 +224,7 @@ crossorigin = "anonymous" >
   integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
 </script>
 <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
-<scr src="{{asset('js/bootstrap-table-es-CL.js')}}">
-  </script>
-</scr ipt>
+<script src="{{asset('js/bootstrap-table-es-CL.js')}}">
+</script>
+</script>
 @stop

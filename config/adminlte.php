@@ -324,6 +324,11 @@ return [
             'icon' => 'fas fa-fw fa-folder',
         ],
         [
+            'text' => 'Actividad',
+            'url'  => '/actividad',
+            'icon' => 'fas fa-fw fa-laptop',
+        ],
+        [
             'text' => 'Cerrar Sesión',
             'url'  => 'usuarios/logout',
             'icon' => 'fas fa-fw fa-lock',

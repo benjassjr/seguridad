@@ -3,7 +3,7 @@
 @section('title', 'Seguridad')
 
 @section('content_header')
-<h1>Seguridad</h1>
+
 @stop
 
 @section('content')
@@ -14,12 +14,18 @@
   </div>
 </div>
 <!--Usuario-->
-<div class="card">
+<div class="row">
+  <div class="col">
+    <h2>Seguridad</h2>
+  </div>
+</div>
+
+<div class="card mt-5">
   <div class="card-header">
-    <h1 class="card-title">Hola Mundo</h1>
+    <h1 class="card-title"><b> Portal de Bienvenida</b></h1>
   </div>
   <div class="card-body">
-    <p>AdminTest</p>
+    <p>Home</p>
   </div>
 
 </div>
