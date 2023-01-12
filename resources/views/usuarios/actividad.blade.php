@@ -43,7 +43,7 @@
             <th data-sortable="true">Nº</th>
             <th data-sortable="true">Rut</th>
             <th data-sortable="true">Nombre</th>
-            <th data-sortable="true">Inició Sesión</th>
+            <th data-sortable="true">Actividad</th>
             <th data-sortable="true">Rol</th>
             <th data-sortable="true">Activo</th>
             <th>Activar/Desactivar</th>
