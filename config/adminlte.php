@@ -319,6 +319,11 @@ return [
             'icon' => 'fas fa-fw fa-users',
         ],
         [
+            'text' => 'Funcionarios',
+            'url'  => '/funcionarios',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'Municipalidad La Cruz',
             'url'  => 'https://lacruz.cl',
             'icon' => 'fas fa-fw fa-folder',

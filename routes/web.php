@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\{RolesController,UsuariosController};
+use App\Http\Controllers\{RolesController,UsuariosController,FuncionariosController};
 use App\Http\Controllers\HomeController;
 
 /*
@@ -39,3 +39,9 @@ Route::put('/usuarios/{usuario}',[UsuariosController::class, 'update'])->name('u
 
 Route::get('/actividad',[UsuariosController::class,'actividad'])->name('usuarios.actividad');
 Route::post('/actividad/{usuario}/activar',[UsuariosController::class,'activaractividad'])->name('usuarios.activaractividad');
+
+Route::get('/funcionarios',[FuncionariosController::class,'index'])->name('funcionarios.index');
+Route::put('/funcionarios/{funcionario}',[FuncionariosController::class, 'update'])->name('funcionarios.update');
+Route::post('/funcionarios',[FuncionariosController::class, 'store'])->name('funcionarios.store');
+Route::get('/funcionarios/{funcionario}/edit',[FuncionariosController::class, 'edit'])->name('funcionarios.edit');
+Route::delete('/funcionarios/{funcionario}',[FuncionariosController::class, 'destroy'])->name('funcionarios.destroy');
