@@ -30,7 +30,7 @@
   <div class="row">
     <div class="col">
       <!-- Titulo -->
-      <h3>Actividad Usuarios</h3>
+      <h3>Actividad Usuarios si</h3>
     </div>
   </div>
 
