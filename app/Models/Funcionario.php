@@ -10,4 +10,9 @@ class Funcionario extends Model
     use HasFactory;
     protected $table = 'funcionarios';
 
+    public function unidad(){
+        return $this->belongsTo('App\Models\Unidad');
+
+    }
+
 }

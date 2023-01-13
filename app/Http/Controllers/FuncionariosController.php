@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Funcionario;
+use App\Models\Unidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,8 @@ class FuncionariosController extends Controller
     public function index()
     {
         $funcionarios = Funcionario::all();
-        return view('funcionarios.index',compact('funcionarios'));
+        $unidades = Unidad::all();
+        return view('funcionarios.index',compact('funcionarios','unidades'));
     }
 
     public function store(UsuariosRequest $request)
