@@ -35,8 +35,8 @@
   <div class="row">
 
     <!--tabla-->
-    <div class="col-12 col-lg-8 mt-1 mt-lg-0">
-      <table data-toggle="table" data-pagination="true" data-page-size="8" data-search="true"
+    <div class="col-12 col-lg-10 offset-lg-1 mt-1 mt-lg-0">
+      <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover">
         <thead>
           <tr>
@@ -51,7 +51,7 @@
         </thead>
         <tbody>
           @foreach ($funcionarios as $num=>$funcionario)
-          <tr>
+          <tr data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">
             <td>{{$num+1}}</td>
             <td>{{$funcionario->nombre}}</td>
             <td>{{$funcionario->apellidos}}</td>
@@ -59,58 +59,48 @@
             <td>{{$funcionario->unidad}}</td>
             <td>{{$funcionario->rut}}</td>
             <td>{{$funcionario->slug}}</td>
-            <td>
-              <div class="d-flex justify-content-center">
-                <!-- Borrar -->
-                @if(Auth::user()->id!=$funcionario->id)
-                <span data-toggle="tooltip" data-placement="top" title="Borrar Usuario">
-                  <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-                    data-target="#funcionarioBorrarModal{{$funcionario->id}}">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </span>
-                @endif
-                <!-- Borrar -->
-                <!-- Editar -->
+            <!-- <td>
+               <div class="d-flex justify-content-center">
+
+                Editar
                 <a href="{{route('funcionarios.edit',$funcionario->id)}}" class="btn btn-sm btn-warning mx-1"
                   data-toggle="tooltip" data-placement="top" title="Editar Usuario">
                   <i class="far fa-edit"></i>
                 </a>
-                <!-- Editar -->
+                Editar
 
-              </div>
-              <!-- Modal Borrar Usuario -->
-              <div class="modal fade" id="funcionarioBorrarModal{{$funcionario->id}}" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Confirmar Borrar Usuario</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="d-flex align-items-center">
-                        <i class="fas fa-exclamation-circle text-danger mr-2" style="font-size: 2rem"></i>
-                        ¿Desea borrar al funcionario {{$funcionario->nombre}}?
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <form method="POST" action="{{route('funcionarios.destroy',$funcionario->id)}}">
-                        @csrf
-                        @method('delete')
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-danger">Borrar Usuario</button>
-                      </form>
-                    </div>
+              </div> -->
+
+            <!-- </td> -->
+          </tr>
+          <!-- Modal Borrar Usuario -->
+          <div class="modal fade" id="funcionarioBorrarModal{{$funcionario->id}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirmar Borrar Usuario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex align-items-center">
+                    <i class="fas fa-exclamation-circle text-danger mr-2" style="font-size: 2rem"></i>
+                    ¿Desea borrar al funcionario {{$funcionario->nombre}}?
                   </div>
                 </div>
+                <div class="modal-footer">
+                  <form method="POST" action="{{route('funcionarios.destroy',$funcionario->id)}}">
+                    @csrf
+                    @method('delete')
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Borrar Usuario</button>
+                  </form>
+                </div>
               </div>
-            </td>
-
-          </tr>
-
+            </div>
+          </div>
 
           @endforeach
         </tbody>
