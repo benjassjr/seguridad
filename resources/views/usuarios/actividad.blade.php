@@ -22,12 +22,14 @@
   <!--Usuario-->
   <div class="row mr-0 text-right">
     <div class="col-12">
+      <!-- Identificacion de usuario -->
       Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
     </div>
   </div>
   <!--Usuario-->
   <div class="row">
     <div class="col">
+      <!-- Titulo -->
       <h3>Actividad Usuarios</h3>
     </div>
   </div>
@@ -36,28 +38,30 @@
 
     <!--tabla-->
     <div class="col-12 col-lg-8 mt-1 mt-lg-0 offset-lg-1">
-      <table data-toggle="table" data-pagination="true" data-page-size="5" data-search="true"
+      <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover">
         <thead>
           <tr>
+            <!-- Encabezados -->
             <th data-sortable="true">Nº</th>
             <th data-sortable="true">Rut</th>
             <th data-sortable="true">Nombre</th>
             <th data-sortable="true">Actividad</th>
-            <th data-sortable="true">Rol</th>
-            <th data-sortable="true">Activo</th>
+            <th data-sortable="true">IP</th>
+            <th data-sortable="true">Mac</th>
             <th>Activar/Desactivar</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($usuarios as $num=>$usuario)
           <tr>
+            <!-- Filas -->
             <td>{{$num+1}}</td>
             <td>{{$usuario->rut}}</td>
             <td>{{$usuario->nombre}}</td>
             <td>{{date('d-m-Y H:i:s',strtotime($usuario->ultimo_login))}}</td>
-            <td>{{$usuario->rol->nombre}}</td>
-            <td>{{$usuario->activo?'Si':'No'}}</td>
+            <td>{{$ip}}</td>
+            <td>{{$desktop}}</td>
             <td>
               <div class="d-flex justify-content-center">
 

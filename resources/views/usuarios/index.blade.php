@@ -103,7 +103,7 @@
 
     <!--tabla-->
     <div class="col-12 col-lg-8 mt-1 mt-lg-0">
-      <table data-toggle="table" data-pagination="true" data-page-size="5" data-search="true"
+      <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover">
         <thead>
           <tr>

@@ -146,7 +146,10 @@ class UsuariosController extends Controller
 
         $usuarios = Usuario::orderByDesc('ultimo_login')->get();
         $roles = Rol::all();
-        return view('usuarios.actividad',compact('usuarios','roles'));
+        // Funcion para obtener ip 13/01/23 Benjamin
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $desktop = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+        return view('usuarios.actividad',compact('usuarios','roles','ip','desktop'));
     }
 
     public function activaractividad(Usuario $usuario){
