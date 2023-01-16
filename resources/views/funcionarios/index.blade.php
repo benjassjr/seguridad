@@ -85,9 +85,8 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="col-lg-6 offset-lg-3">
+                  <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header">Editar Usuario</div>
                       <div class="card-body">
                         @if ($errors->any())
 
@@ -104,42 +103,48 @@
                           enctype="multipart/form-data">
                           @csrf
                           @method('put')
-                          <div class="form-group">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" required name="nombre"
-                              class="form-control @error('nombre') is-invalid @enderror"
-                              value="{{$funcionario->nombre}}">
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                              <label for="nombre">Nombre:</label>
+                              <input type="text" id="nombre" required name="nombre"
+                                class="form-control @error('nombre') is-invalid @enderror"
+                                value="{{$funcionario->nombre}}">
+                            </div>
+                            <div class="form-group col-lg-6">
+                              <label for="apellidos">Apellidos:</label>
+                              <input type="apellidos" id="apellidos" name="apellidos" required
+                                class="form-control @error('apellidos') is-invalid @enderror"
+                                value="{{$funcionario->apellidos}}">
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="apellidos">Apellidos:</label>
-                            <input type="apellidos" id="apellidos" name="apellidos" required
-                              class="form-control @error('apellidos') is-invalid @enderror"
-                              value="{{$funcionario->apellidos}}">
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                              <label for="cargo">Cargo:</label>
+                              <input type="cargo" id="cargo" required name="cargo"
+                                class="form-control @error('cargo') is-invalid @enderror"
+                                value="{{$funcionario->cargo}}">
+                            </div>
+                            <div class="form-group col-lg-6">
+                              <label for="unidad">Unidad:</label>
+                              <select id="unidad" name="unidad" class="form-control">
+                                @foreach ($unidades as $unidad)
+                                <option value="{{$unidad->unidad}}">{{$unidad->unidad}}</option>
+                                @endforeach
+                              </select>
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="cargo">Cargo:</label>
-                            <input type="cargo" id="cargo" required name="cargo"
-                              class="form-control @error('cargo') is-invalid @enderror" value="{{$funcionario->cargo}}">
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                              <label for="rut">Rut:</label>
+                              <input type="text" id="rut" required name="rut"
+                                class="form-control @error('rut') is-invalid @enderror" value="{{$funcionario->rut}}">
+                            </div>
+                            <div class="form-group col-lg-6">
+                              <label for="slug">Slug:</label>
+                              <input type="slug" id="slug" name="slug" required
+                                class="form-control @error('slug') is-invalid @enderror" value="{{$funcionario->slug}}">
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="unidad">Unidad:</label>
-                            <select id="unidad" name="unidad" class="form-control">
-                              @foreach ($unidades as $unidad)
-                              <option value="{{$unidad->unidad}}">{{$unidad->unidad}}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="rut">Rut:</label>
-                            <input type="text" id="rut" required name="rut"
-                              class="form-control @error('rut') is-invalid @enderror" value="{{$funcionario->rut}}">
-                          </div>
-                          <div class="form-group">
-                            <label for="slug">Slug:</label>
-                            <input type="slug" id="slug" name="slug" required
-                              class="form-control @error('slug') is-invalid @enderror" value="{{$funcionario->slug}}">
-                          </div>
-
                       </div>
 
                       <div class="modal-footer">
@@ -148,7 +153,7 @@
                           @csrf
                           @method('put')
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <button type="submit" class="btn btn-warning">Aceptar</button>
+                          <button type="submit" class="btn btn-primary">Aceptar</button>
                         </form>
                       </div>
                     </div>
