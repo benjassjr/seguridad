@@ -125,7 +125,7 @@
                             <label for="unidad">Unidad:</label>
                             <select id="unidad" name="unidad" class="form-control">
                               @foreach ($unidades as $unidad)
-                              <option value="{{$unidad->id}}">{{$unidad->unidad}}</option>
+                              <option value="{{$unidad->unidad}}">{{$unidad->unidad}}</option>
                               @endforeach
                             </select>
                           </div>
