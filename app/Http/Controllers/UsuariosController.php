@@ -84,6 +84,15 @@ class UsuariosController extends Controller
         return view('usuarios.edit',compact('usuario','roles'));
     }
 
+    public function agregar(Usuario $usuario)
+    {
+        if(Gate::denies('usuarios-listar')){
+            return redirect()->route('home.index');
+        }
+
+        $roles = Rol::all();
+        return view('usuarios.agregar',compact('usuario','roles'));
+    }
     /**
      * Update the specified resource in storage.
      *

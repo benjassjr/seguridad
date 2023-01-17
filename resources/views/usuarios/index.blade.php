@@ -33,76 +33,14 @@
   </div>
 
   <div class="row">
-    <!--formulario-->
-    <div class="col-12 col-lg-4 order-lg-1">
-      <div class="card">
-        <div class="card-header">
-          Agregar Usuario
-        </div>
-        <div class="card-body">
-          <!--errores-->
-          @if ($errors->any())
-          <div class="alert alert-warning">
-            <p>Por favor solucione los siguientes problemas:</p>
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
-          <!--/errores-->
-
-          <form method="POST" action="{{route('usuarios.store')}}">
-            @csrf
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" placeholder="Indique su nombre" name="nombre" min="3" required
-                class="form-control @error('nombre') is-invalid @enderror" value="{{old('nombre')}}">
-            </div>
-            <div class="form-group">
-              <label for="rut">Rut:</label>
-              <input type="rut" id="rut" name="rut"
-                placeholder="Indique RUT sin puntos, con guión y con digito verificador" required
-                class="form-control @error('rut') is-invalid @enderror" value="{{old('rut')}}">
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña:</label>
-              <input type="password" id="password" placeholder="Contraseña" required name="password" min="3"
-                class="form-control @error('password') is-invalid @enderror" value="{{old('password')}}">
-            </div>
-            <div class="form-group">
-              <label for="password2">Repetir Contraseña:</label>
-              <input type="password" id="password2" placeholder="Repita su contraseña" required name="password2" min="3"
-                class="form-control @error('password2') is-invalid @enderror" value="{{old('password2')}}">
-            </div>
-            <div class="form-group">
-              <label for="rol">Rol:</label>
-              <select id="rol" name="rol" class="form-control">
-                @foreach ($roles as $rol)
-                <option value="{{$rol->id}}">{{$rol->nombre}}</option>
-                @endforeach
-              </select>
-            </div>
-
-            <div class="form-group">
-              <div class="row">
-                <div class="col-12 col-lg-3 offset-lg-6 pr-lg-0">
-                  <button type="reset" class="btn btn-warning btn-block">Cancelar</button>
-                </div>
-                <div class="col-12 col-lg-3 mt-1 mt-lg-0">
-                  <button type="submit" class="btn btn-info btn-block">Aceptar</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+    <div class="col">
+      <a href="{{route('agregar.index')}}" class="btn btn-success ml-5 mt-5">Agregar Usuario
+      </a>
     </div>
-    <!--/formulario-->
-
+  </div>
+  <div class="row">
     <!--tabla-->
-    <div class="col-12 col-lg-8 mt-1 mt-lg-0">
+    <div class="col-12 col-lg-8 mt-1 offset-lg-1 mt-lg-0">
       <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover">
         <thead>
@@ -119,30 +57,26 @@
         <tbody>
           @foreach ($usuarios as $num=>$usuario)
           <tr>
-            <td>{{$num+1}}</td>
-            <td>{{$usuario->rut}}</td>
-            <td>{{$usuario->nombre}}</td>
-            <td>{{date('d-m-Y H:i:s',strtotime($usuario->created_at))}}</td>
-            <td>{{$usuario->rol->nombre}}</td>
-            <td>{{$usuario->activo?'Si':'No'}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">{{$num+1}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">{{$usuario->rut}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">{{$usuario->nombre}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">
+              {{date('d-m-Y H:i:s',strtotime($usuario->created_at))}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">{{$usuario->rol->nombre}}</td>
+            <td data-toggle="modal" data-target="#usuarioEditarModal{{$usuario->id}}">{{$usuario->activo?'Si':'No'}}
+            </td>
             <td>
               <div class="d-flex justify-content-center">
                 <!-- Borrar -->
                 @if(Auth::user()->id!=$usuario->id)
                 <span data-toggle="tooltip" data-placement="top" title="Borrar Usuario">
-                  <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                  <button type="button" class="btn btn-sm btn-danger mx-1" data-toggle="modal"
                     data-target="#usuarioBorrarModal{{$usuario->id}}">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </span>
                 @endif
                 <!-- Borrar -->
-                <!-- Editar -->
-                <a href="{{route('usuarios.edit',$usuario->id)}}" class="btn btn-sm btn-warning mx-1"
-                  data-toggle="tooltip" data-placement="top" title="Editar Usuario">
-                  <i class="far fa-edit"></i>
-                </a>
-                <!-- Editar -->
                 <!-- Activar -->
                 @if(Auth::user()->id!=$usuario->id)
                 <form method="POST" action="{{route('usuarios.activar',$usuario->id)}}">
@@ -186,9 +120,85 @@
             </td>
 
           </tr>
+          <!-- Modal Borrar Usuario -->
+          <div class="modal fade" id="usuarioEditarModal{{$usuario->id}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Datos Funcionario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-body">
+                        @if ($errors->any())
+
+                        <div class="alert alert-warning">
+                          <p>Por favor solucione los siguientes problemas:</p>
+                          <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                          </ul>
+                        </div>
+                        @endif
+                        <form method="POST" action="{{route('usuarios.update',$usuario->id)}}"
+                          enctype="multipart/form-data">
+                          @csrf
+                          @method('put')
+
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                              <label for="nombre">Nombre:</label>
+                              <input type="text" id="nombre" required name="nombre"
+                                class="form-control @error('nombre') is-invalid @enderror" value="{{$usuario->nombre}}">
+                            </div>
+                            <div class="form-group col-lg-6">
+                              <label for="rut">Rut:</label>
+                              <input type="rut" id="rut" name="rut" required
+                                class="form-control @error('rut') is-invalid @enderror" value="{{$usuario->rut}}">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                              <label for="password">Contraseña:</label>
+                              <input type="password" id="password" required name="password"
+                                class="form-control @error('password') is-invalid @enderror">
+                            </div>
+                            <div class="form-group col-lg-6">
+                              <label for="password2">Repetir Contraseña:</label>
+                              <input type="password" id="password2" required name="password2"
+                                class="form-control @error('password2') is-invalid @enderror">
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-6 offset-lg-3">
+                            <label for="rol">Rol:</label>
+                            <select id="rol" name="rol" class="form-control">
+                              @foreach ($roles as $rol)
+                              <option value="{{$rol->id}}">{{$rol->nombre}}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                      </div>
 
 
-          @endforeach
+                      <div class="modal-footer">
+                        <form method="POST" action="{{route('usuarios.update',$usuario->id)}}"
+                          enctype="multipart/form-data">
+                          @csrf
+                          @method('put')
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <button type="submit" class="btn btn-info">Aceptar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                @endforeach
         </tbody>
       </table>
     </div>

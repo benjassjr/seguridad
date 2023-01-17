@@ -45,3 +45,5 @@ Route::put('/funcionarios/{funcionario}',[FuncionariosController::class, 'update
 Route::post('/funcionarios',[FuncionariosController::class, 'store'])->name('funcionarios.store');
 Route::get('/funcionarios/{funcionario}/edit',[FuncionariosController::class, 'edit'])->name('funcionarios.edit');
 Route::delete('/funcionarios/{funcionario}',[FuncionariosController::class, 'destroy'])->name('funcionarios.destroy');
+
+Route::get('/usuarios-agregar',[UsuariosController::class, 'agregar'])->name('agregar.index');
