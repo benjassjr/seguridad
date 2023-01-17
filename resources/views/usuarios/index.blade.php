@@ -135,8 +135,8 @@
                   <div class="col-lg-12">
                     <div class="card">
                       <div class="card-body">
+                        <!-- errores -->
                         @if ($errors->any())
-
                         <div class="alert alert-warning">
                           <p>Por favor solucione los siguientes problemas:</p>
                           <ul>
@@ -183,16 +183,10 @@
                               @endforeach
                             </select>
                           </div>
-                      </div>
-
-
-                      <div class="modal-footer">
-                        <form method="POST" action="{{route('usuarios.update',$usuario->id)}}"
-                          enctype="multipart/form-data">
-                          @csrf
-                          @method('put')
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <button type="submit" class="btn btn-info">Aceptar</button>
+                          <div class="modal-footer mt-5">
+                            <button type="reset" class="btn col-lg-2 btn-secondary btn-block">Cancelar</button>
+                            <button type="submit" class="btn col-lg-2 btn-primary btn-block">Aceptar</button>
+                          </div>
                         </form>
                       </div>
                     </div>

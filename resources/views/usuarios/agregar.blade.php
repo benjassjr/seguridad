@@ -88,7 +88,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-12 col-lg-3 offset-lg-6 pr-lg-0">
-                  <button type="reset" class="btn btn-warning btn-block">Cancelar</button>
+                  <button type="reset" class="btn btn-secondary btn-block">Cancelar</button>
                 </div>
                 <div class="col-12 col-lg-3 mt-1 mt-lg-0">
                   <button type="submit" class="btn btn-primary btn-block">Aceptar</button>

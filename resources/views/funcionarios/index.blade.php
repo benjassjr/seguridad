@@ -152,7 +152,7 @@
                           enctype="multipart/form-data">
                           @csrf
                           @method('put')
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <button type="reset" class="btn btn-secondary">Cancelar</button>
                           <button type="submit" class="btn btn-primary">Aceptar</button>
                         </form>
                       </div>

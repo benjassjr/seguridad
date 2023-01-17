@@ -100,7 +100,7 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(UsuariosEditarRequest $request, Usuario $usuario)
+    public function update(Request $request, Usuario $usuario)
     {
         $usuario->rut = $request->rut;
         $usuario->nombre = $request->nombre;
