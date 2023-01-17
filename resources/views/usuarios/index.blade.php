@@ -34,7 +34,8 @@
 
   <div class="row">
     <div class="col">
-      <a href="{{route('agregar.index')}}" class="btn btn-success ml-5 mt-5">Agregar Usuario
+      <a href="{{route('agregar.index')}}" class="btn btn-success ml-5 mt-5"> <i class="far fa-user"></i>
+        Agregar Usuario
       </a>
     </div>
   </div>
