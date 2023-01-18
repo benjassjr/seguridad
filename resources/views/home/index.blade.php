@@ -7,32 +7,52 @@
 @stop
 
 @section('content')
-<!--Usuario-->
-<div class="row mr-0 text-right">
-  <div class="col-12">
-    Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
-  </div>
-</div>
-<!--Usuario-->
-<div class="row">
-  <div class="col">
-    <h2>Seguridad</h2>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="card mt-5">
-  <div class="card-header">
-    <h1 class="card-title"><b> Portal de Bienvenida</b></h1>
-  </div>
-  <div class="card-body">
-    <p>Home</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+</head>
+
+<body>
+  <div class="titulo banner">
+    <!--Usuario-->
+    <div class="row mr-0 text-right">
+      <div class="col-12">
+        Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
+      </div>
+    </div>
+    <!--Usuario-->
+    <div class="content">
+      <h1>Seguridad La Cruz</h1>
+      <p>Página web desarrollada por practicantes informáticos</p>
+      <div>
+        <a href="{{route('funcionarios.index')}}">
+          <button type="button">
+            <div class="spanb"></div>Funcionarios
+          </button>
+        </a>
+        <a href="{{route('usuarios.actividad')}}">
+          <button type="button">
+            <div class="spanb"></div>Actividad
+          </button>
+        </a>
+      </div>
+    </div>
   </div>
 
-</div>
+</body>
+
+</html>
 @stop
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="{{ asset('css/stylehome.css') }}">
+
 @stop
 
 @section('js')
