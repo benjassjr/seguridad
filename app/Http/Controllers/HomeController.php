@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Funcionario;
+use App\Models\Usuario;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +14,15 @@ class HomeController extends Controller
 
     public function index(){
         //dd('Hola Mundo');//dd: dump and die
-        return view('home.index');
+        $funcionarios = Funcionario::all();
+        $funcionario1 = Funcionario::find(25);
+        $funcionario2 = Funcionario::find(24);
+        $funcionario3 = Funcionario::find(26);
+        $funcionario4 = Funcionario::find(27);
+        $funcionario5 = Funcionario::find(34);
+
+        $usuarios = Usuario::orderByDesc('ultimo_login')->get();
+        return view('home.index',compact('funcionarios','usuarios','funcionario1','funcionario2','funcionario3','funcionario4','funcionario5'));
     }
 
     public function login(){
