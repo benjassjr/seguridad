@@ -47,3 +47,4 @@ Route::get('/funcionarios/{funcionario}/edit',[FuncionariosController::class, 'e
 Route::delete('/funcionarios/{funcionario}',[FuncionariosController::class, 'destroy'])->name('funcionarios.destroy');
 
 Route::get('/usuarios-agregar',[UsuariosController::class, 'agregar'])->name('agregar.index');
+Route::get('/inicio',[HomeController::class,'dashboard'])->name('home.dashboard');

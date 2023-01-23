@@ -35,9 +35,9 @@
             <div class="spanb"></div>Funcionarios
           </button>
         </a>
-        <a href="{{route('usuarios.actividad')}}">
+        <a href="https://www.lacruz.cl">
           <button type="button">
-            <div class="spanb"></div>Actividad
+            <div class="spanb"></div>Municipalidad La Cruz
           </button>
         </a>
       </div>
