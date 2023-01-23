@@ -1,0 +1,54 @@
+.contenedor{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+i{
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    margin: 20px;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, .35);
+    transition: .3s ease;
+}
+
+.fab-youtube:hover{
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 15px red,
+                0 0 45px red,
+                0 0 75px red,
+                0 0 115px red;
+}
+
+.fab-twitter{
+    background-color: #1DA1F2;
+    color: white;
+    box-shadow: 0 0 15px #1DA1F2,
+                0 0 45px #1DA1F2,
+                0 0 75px #1DA1F2,
+                0 0 115px #1DA1F2;
+}
+
+.fab-instagram{
+    background-color: #FF3E00;
+    color: white;
+    box-shadow: 0 0 15px #FF3E00,
+                0 0 45px #FF3E00,
+                0 0 75px #FF3E00,
+                0 0 115px #FF3E00;
+}
+
+.fab-facebook{
+    background-color: #3B5999;
+    color: white;
+    box-shadow: 0 0 15px #3B5999,
+                0 0 45px #3B5999,
+                0 0 75px #3B5999,
+                0 0 115px #3B5999;
+}
