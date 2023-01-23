@@ -110,7 +110,7 @@
                   <div class="align-self-center">
                     <h6 class="d-inline-block mb-0">{{$funcionario1->nombre}}</h6><span
                       class="badge badge-success ml-2">{{$funcionario1->slug}}</span>
-                    <small class="d-block text-muted">{{$funcionario1->cargo}} diseño web</small>
+                    <small class="d-block text-muted">{{$funcionario1->cargo}}</small>
                   </div>
                 </div>
                 <div class="d-flex border-bottom py-2">
@@ -120,7 +120,7 @@
                   <div class="align-self-center">
                     <h6 class="d-inline-block mb-0">{{$funcionario2->nombre}}</h6><span
                       class="badge badge-success ml-2">{{$funcionario2->slug}}</span>
-                    <small class="d-block text-muted">{{$funcionario2->cargo}} diseño web</small>
+                    <small class="d-block text-muted">{{$funcionario2->cargo}}</small>
                   </div>
                 </div>
                 <div class="d-flex border-bottom py-2">
@@ -130,7 +130,7 @@
                   <div class="align-self-center">
                     <h6 class="d-inline-block mb-0">{{$funcionario3->nombre}}</h6><span
                       class="badge badge-success ml-2">{{$funcionario3->slug}}</span>
-                    <small class="d-block text-muted">{{$funcionario3->cargo}} diseño web</small>
+                    <small class="d-block text-muted">{{$funcionario3->cargo}}</small>
                   </div>
                 </div>
                 <div class="d-flex border-bottom py-2">
@@ -140,7 +140,7 @@
                   <div class="align-self-center">
                     <h6 class="d-inline-block mb-0">{{$funcionario4->nombre}}</h6><span
                       class="badge badge-success ml-2">{{$funcionario4->slug}}</span>
-                    <small class="d-block text-muted">{{$funcionario4->cargo}} diseño web</small>
+                    <small class="d-block text-muted">{{$funcionario4->cargo}}</small>
                   </div>
                 </div>
                 <div class="d-flex border-bottom py-2 mb-3">
@@ -150,7 +150,7 @@
                   <div class="align-self-center">
                     <h6 class="d-inline-block mb-0">{{$funcionario5->nombre}}</h6><span
                       class="badge badge-success ml-2">{{$funcionario5->slug}}</span>
-                    <small class="d-block text-muted">{{$funcionario5->cargo}} diseño web</small>
+                    <small class="d-block text-muted">{{$funcionario5->cargo}}</small>
                   </div>
                 </div>
                 <a href="{{route('funcionarios.index')}}" class="btn btn-primary w-100">Ver todos</a>
@@ -219,5 +219,5 @@ var myChart = new Chart(ctx, {
 
 });
 </script>
-</scr ipt>
+</script>
 @stop
