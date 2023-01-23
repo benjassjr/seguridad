@@ -1,12 +1,12 @@
-.contenedor{
+.contenedor {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 170%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-i{
+.im {
     text-align: center;
     font-size: 25px;
     color: black;
@@ -17,38 +17,38 @@ i{
     transition: .3s ease;
 }
 
-.fab-youtube:hover{
+.fab-youtube {
     background-color: red;
     color: white;
     box-shadow: 0 0 15px red,
-                0 0 45px red,
-                0 0 75px red,
-                0 0 115px red;
+        0 0 45px red,
+        0 0 75px red,
+        0 0 115px red;
 }
 
-.fab-twitter{
+.fab-twitter {
     background-color: #1DA1F2;
     color: white;
     box-shadow: 0 0 15px #1DA1F2,
-                0 0 45px #1DA1F2,
-                0 0 75px #1DA1F2,
-                0 0 115px #1DA1F2;
+        0 0 45px #1DA1F2,
+        0 0 75px #1DA1F2,
+        0 0 115px #1DA1F2;
 }
 
-.fab-instagram{
-    background-color: #FF3E00;
+.fab-instagram {
+    background-color: #A507EA;
     color: white;
-    box-shadow: 0 0 15px #FF3E00,
-                0 0 45px #FF3E00,
-                0 0 75px #FF3E00,
-                0 0 115px #FF3E00;
+    box-shadow: 0 0 15px #A507EA,
+        0 0 45px #A507EA,
+        0 0 75px #A507EA,
+        0 0 115px #A507EA;
 }
 
-.fab-facebook{
+.fab-facebook {
     background-color: #3B5999;
     color: white;
     box-shadow: 0 0 15px #3B5999,
-                0 0 45px #3B5999,
-                0 0 75px #3B5999,
-                0 0 115px #3B5999;
+        0 0 45px #3B5999,
+        0 0 75px #3B5999,
+        0 0 115px #3B5999;
 }

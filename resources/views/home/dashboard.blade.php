@@ -40,15 +40,24 @@
             <div class="spanb"></div>Municipalidad La Cruz
           </button>
         </a>
-        <div class="contenedor">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
+
       </div>
-    </div>   
-</div>
+      <div class="contenedor">
+        <a href="https://es-la.facebook.com/LACRUZ.CL/">
+          <i class="im fab-facebook fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/municipalidadlacruz/?hl=es">
+          <i class="im fab-instagram fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/muni_lacruz">
+          <i class="im fab-twitter fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UC9IavHMutzVhCsFN2NGEE6A">
+          <i class="im fab-youtube fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
 </body>
 
@@ -56,7 +65,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="resources/css/estilos.css">
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 <link rel="stylesheet" href="/css/admin_custom.css">
 <link rel="stylesheet" href="{{ asset('css/stylehome.css') }}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
