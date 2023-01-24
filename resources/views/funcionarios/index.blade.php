@@ -36,7 +36,7 @@
 
     <!--tabla-->
     <div class="col-12 col-lg-10 offset-lg-1 mt-1 mt-lg-0">
-      <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
+      <table id="funcionarios" data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover">
         <thead>
           <tr>
@@ -178,7 +178,7 @@
   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
 @stop
 
 @section('js')
@@ -193,8 +193,14 @@ crossorigin = "anonymous" >
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
   integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
 </script>
-<script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
 <script src="{{asset('js/bootstrap-table-es-CL.js')}}">
+</script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#funcionarios').DataTable();
+});
 </script>
 </script>
 @stop
