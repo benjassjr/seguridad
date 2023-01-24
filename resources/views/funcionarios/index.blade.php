@@ -13,9 +13,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"> 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"> 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css"> 
   <title>Funcionarios</title>
 
 
@@ -38,8 +35,8 @@
   <div class="row">
 
     <!--tabla-->
-    <div class="col-12 col-lg-11 ml-5 mt-1 mt-lg-0">
-      <table id="funcionarios" data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
+    <div class="col-12 col-lg-12  mt-1 mt-lg-0">
+      <table id="datatable" data-toggle="table" data-pagination="true" data-page-size="10" data-search="true"
         class="table table-bordered table-striped table-hover display responsive nowrap">
         <thead>
           <tr>
@@ -56,12 +53,17 @@
           @foreach ($funcionarios as $num=>$funcionario)
           <tr>
             <td>{{$num+1}}</td>
-            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->nombre}}</td>
-            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->apellidos}}</td>
-            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->cargo}}</td>
-            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->unidad}}</td>
+            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->nombre}}
+            </td>
+            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">
+              {{$funcionario->apellidos}}</td>
+            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->cargo}}
+            </td>
+            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->unidad}}
+            </td>
             <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->rut}}</td>
-            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->slug}}</td>
+            <td data-toggle="modal" data-target="#funcionarioBorrarModal{{$funcionario->id}}">{{$funcionario->slug}}
+            </td>
             <!-- <td>
                <div class="d-flex justify-content-center">
 
@@ -182,6 +184,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js">
+<link rel="stylesheet" type="text/css"
+  href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 @stop
 
 @section('js')
@@ -196,23 +201,10 @@ crossorigin = "anonymous" >
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
   integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
 </script>
-<script src="{{asset('js/bootstrap-table-es-CL.js')}}">
-</script>
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
-<script>
-$(document).ready(function() {
-  $('#funcionarios').DataTable({
-        scrollY: '600px',
-        scrollCollapse: true,
-        paging: false,
-        responsive: true,
-    });
-});
+<script src="{{asset('js/datatable.js')}}">
 </script>
 </script>
 @stop
