@@ -8,14 +8,14 @@
 @endsection
 @section('contenido-principal')
 
-<div class="row">
+<div class="row mt-5 mt-lg-0">
   <div class="col">
     <!-- Titulo -->
     <h3>Actividad Usuarios</h3>
   </div>
 </div>
 
-<div class="row">
+<div class="row mt-5">
 
   <!--tabla-->
   <div class="col-12 col-lg-8 mt-1 mt-lg-0 offset-lg-1">

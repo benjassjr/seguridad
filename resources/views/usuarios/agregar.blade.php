@@ -4,18 +4,18 @@
 
 @endsection
 @section('contenido-principal')
-<div class="row">
+<div class="row mt-4 mt-lg-0">
   <div class="col">
     <h3>Agregar Usuario</h3>
   </div>
 </div>
-<br> <br>
+<br>
 <div class="row">
   <!--formulario-->
   <div class="col-12 col-lg-4 order-lg-1 offset-lg-4">
     <div class="card">
       <div class="card-header bg-dark">
-        <h4>Añadir Usuario</h4>
+        <h4>Nuevo Usuario</h4>
       </div>
       <div class="card-body">
         <!--errores-->

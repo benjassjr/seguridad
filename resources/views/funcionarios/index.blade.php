@@ -7,7 +7,7 @@
   href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 @endsection
 @section('contenido-principal')
-<div class="row">
+<div class="row my-3">
   <div class="col">
     <h3>Funcionarios</h3>
   </div>

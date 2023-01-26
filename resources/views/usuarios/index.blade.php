@@ -7,7 +7,7 @@
   href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 @endsection
 @section('contenido-principal')
-<div class="row">
+<div class="row mt-3 mt-lg-0">
   <div class="col">
     <h3>Usuarios</h3>
   </div>
@@ -15,7 +15,7 @@
 
 <div class="row">
   <div class="col">
-    <a href="{{route('agregar.index')}}" class="btn btn-success ml-5 mt-5"> <i class="far fa-user"></i>
+    <a href="{{route('agregar.index')}}" class="btn btn-success ml-lg-5 mt-lg-5 mt-4 mb-4"> <i class="fas fa-plus"></i>
       Agregar Usuario
     </a>
   </div>
