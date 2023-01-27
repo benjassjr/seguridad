@@ -54,21 +54,21 @@
   <section class="cards contenedor">
     <h2 class="titulo">Nuestras Redes Sociales</h2>
     <div class="content-cards">
-      <article class="card">
+      <article class="card mt-5">
         <i class="fab fa-facebook"></i>
         <h3>Facebook</h3>
         <br>
         <p>Contamos con página de facebook.</p>
         <a href="https://es-la.facebook.com/LACRUZ.CL/" class="cta mt-5">Visitar</a>
       </article>
-      <article class="card">
+      <article class="card mt-5">
         <i class="fab fa-instagram"></i>
         <h3>Instagram</h3>
         <br>
         <p>Por supuesto un perfil de instagram.</p>
         <a href="https://www.instagram.com/municipalidadlacruz/?hl=es" class="cta mt-5">Visitar</a>
       </article>
-      <article class="card">
+      <article class="card mt-5">
         <i class="fab fa-twitter"></i>
         <h3>Twitter</h3>
         <br>
