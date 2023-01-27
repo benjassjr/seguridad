@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Landing Page HTML | AlexCG Design</title>
+  <title>Portal Bienvenida | SeguridadLaCruz</title>
 </head>
 
 <body>
@@ -30,16 +30,18 @@
       </svg></div>
   </header>
 
+  <!-- Display en pc -->
 
-  <section class="wave-contenedor website">
-    <img src="{{ asset('images/ilustracion1.jpg') }}" alt="">
-    <div class="contenedor-textos-main">
+  <section class="wave-contenedor website mt-3 mt-lg-0">
+    <img class="d-lg-block d-none" src="{{ asset('images/ilustracion1.jpg') }}" alt="">
+    <div class="contenedor-textos-main m-3 m-lg-0">
       <h2 class="titulo left">Municipalidad de la Cruz</h2>
       <p class="parrafo">La Municipalidad de La Cruz es liderada por la alcaldesa Filomena Navia Hevia y el honorable
         concejo municipal, quienes ponen su capacidades y disposición al servicio de todos los vecinos y vecinas de esta
         comuna.</p>
       <a href="https://www.lacruz.cl" class="cta">Visitar Página Web</a>
     </div>
+    <img class="d-lg-none" src="{{ asset('images/ilustracion1.jpg') }}" alt="">
   </section>
 
   <section class="info">
@@ -57,24 +59,21 @@
         <h3>Facebook</h3>
         <br>
         <p>Contamos con página de facebook.</p>
-        <br><br><br>
-        <a href="https://es-la.facebook.com/LACRUZ.CL/" class="cta">Visitar</a>
+        <a href="https://es-la.facebook.com/LACRUZ.CL/" class="cta mt-5">Visitar</a>
       </article>
       <article class="card">
         <i class="fab fa-instagram"></i>
         <h3>Instagram</h3>
         <br>
         <p>Por supuesto un perfil de instagram.</p>
-        <br><br><br>
-        <a href="https://www.instagram.com/municipalidadlacruz/?hl=es" class="cta">Visitar</a>
+        <a href="https://www.instagram.com/municipalidadlacruz/?hl=es" class="cta mt-5">Visitar</a>
       </article>
       <article class="card">
         <i class="fab fa-twitter"></i>
         <h3>Twitter</h3>
         <br>
         <p>Además de cuenta de twitter.</p>
-        <br><br><br>
-        <a href="https://twitter.com/muni_lacruz" class="cta">Visitar</a>
+        <a href="https://twitter.com/muni_lacruz" class="cta mt-5">Visitar</a>
       </article>
     </div>
   </section>
