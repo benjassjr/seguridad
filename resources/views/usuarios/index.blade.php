@@ -71,38 +71,38 @@
               @endif
               <!-- Activar -->
             </div>
-            <!-- Modal Borrar Usuario -->
-            <div class="modal fade" id="usuarioBorrarModal{{$usuario->id}}" tabindex="-1"
-              aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Confirmar Borrar Usuario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="d-flex align-items-center">
-                      <i class="fas fa-exclamation-circle text-danger mr-2" style="font-size: 2rem"></i>
-                      ¿Desea borrar al usuario {{$usuario->nombre}}?
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <form method="POST" action="{{route('usuarios.destroy',$usuario->id)}}">
-                      @csrf
-                      @method('delete')
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-danger">Borrar Usuario</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
           </td>
 
         </tr>
         <!-- Modal Borrar Usuario -->
+        <div class="modal fade" id="usuarioBorrarModal{{$usuario->id}}" tabindex="-1"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Borrar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-exclamation-circle text-danger mr-2" style="font-size: 2rem"></i>
+                  ¿Desea borrar al usuario {{$usuario->nombre}}?
+                </div>
+              </div>
+              <div class="modal-footer">
+                <form method="POST" action="{{route('usuarios.destroy',$usuario->id)}}">
+                  @csrf
+                  @method('delete')
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-danger">Borrar Usuario</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Editar Usuario -->
         <div class="modal fade" id="usuarioEditarModal{{$usuario->id}}" tabindex="-1"
           aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
