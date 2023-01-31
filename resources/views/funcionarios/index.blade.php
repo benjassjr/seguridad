@@ -129,6 +129,16 @@
                             <input type="slug" id="slug" name="slug" required
                               class="form-control @error('slug') is-invalid @enderror" value="{{$funcionario->slug}}">
                           </div>
+                          <div class="form-group col-lg-6">
+                            <label for="qr">Código QR:</label>
+                            {{$miQr = QrCode::
+                                size(125)
+                                ->backgroundColor(250, 240, 215)
+                                ->color(0, 0, 0)
+                                ->margin(1)
+                                ->generate($funcionario->rut)
+                            }}
+                          </div>
                         </div>
                     </div>
 
