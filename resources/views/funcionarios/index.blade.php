@@ -133,7 +133,7 @@
                             <label for="qr">Código QR:</label>
                             {{$miQr = QrCode::
                                 size(125)
-                                ->backgroundColor(250, 240, 215)
+                                ->backgroundColor(250, 250, 245)
                                 ->color(0, 0, 0)
                                 ->margin(1)
                                 ->generate($funcionario->rut)

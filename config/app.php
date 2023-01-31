@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        SimpleSoftwareIO\QrCodeServiceProvider::class, /**paquete de codigo QR simple */
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class, /**paquete de codigo QR simple */
 
     ],
 
