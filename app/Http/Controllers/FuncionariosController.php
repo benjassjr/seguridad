@@ -43,4 +43,19 @@ class FuncionariosController extends Controller
         $funcionario->delete();
         return redirect()->route('funcionarios.index');
     }
+    public function validar(Funcionario $funcionario)
+    {
+        // dd(substr($_SERVER["REQUEST_URI"], 14, 12));
+        $rutqr =  substr($_SERVER["REQUEST_URI"], 14, 11);
+        $rutqr2 =  substr($_SERVER["REQUEST_URI"], 14, 12);
+        if (Funcionario::where('rut', $rutqr )->exists()) {
+            dd('Funcionario existente: ');
+        }else {
+            if (Funcionario::where('rut', $rutqr2 )->exists()) {
+            dd('Funcionario existente: ');
+        }else {
+            dd('Funcionario NO existe');
+        }}
+        return view('funcionarios.qr',compact('funcionario', 'rutqr'));
+    }
 }

@@ -136,7 +136,7 @@
                                 ->backgroundColor(250, 250, 245)
                                 ->color(0, 0, 0)
                                 ->margin(1)
-                                ->generate($funcionario->rut)
+                                ->generate($_SERVER["HTTP_HOST"].'/funcionarios/'.$funcionario->rut.'/validar')
                             }}
                           </div>
                         </div>
