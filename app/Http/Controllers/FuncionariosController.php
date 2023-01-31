@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class FuncionariosController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth')->except(['login']);
+        $this->middleware('auth')->except(['login','validar']);
 
     }
 
