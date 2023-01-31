@@ -5,7 +5,7 @@ use App\Models\Funcionario;
 use App\Models\Unidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use DB;
 class FuncionariosController extends Controller
 {
     public function __construct() {
@@ -49,13 +49,20 @@ class FuncionariosController extends Controller
         $rutqr =  substr($_SERVER["REQUEST_URI"], 14, 11);
         $rutqr2 =  substr($_SERVER["REQUEST_URI"], 14, 12);
         if (Funcionario::where('rut', $rutqr )->exists()) {
-            dd('Funcionario existente: ');
+            $validacion = '';
+
+            $funcionario= DB::table('funcionarios')->select('*')->where('rut', '=', $rutqr)->first();
+        
         }else {
             if (Funcionario::where('rut', $rutqr2 )->exists()) {
-            dd('Funcionario existente: ');
+                $validacion = '';
+
+                $funcionario= DB::table('funcionarios')->select('*')->where('rut', '=', $rutqr2)->first();
         }else {
-            dd('Funcionario NO existe');
-        }}
-        return view('funcionarios.qr',compact('funcionario', 'rutqr'));
+            $validacion = 'FUNCIONARIO INEXISTENTE';
+
+        }
+}
+        return view('funcionarios.qr',compact('funcionario', 'rutqr', 'rutqr2', 'validacion'));
     }
 }
