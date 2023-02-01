@@ -19,13 +19,6 @@
 </head>
 
 <body>
-  <!--Usuario-->
-  <div class="row mr-0 text-right">
-    <div class="col-12">
-      Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
-    </div>
-  </div>
-  <!--Usuario-->
   @yield('contenido-principal')
 
 </body>

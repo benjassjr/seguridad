@@ -7,6 +7,13 @@
   href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 @endsection
 @section('contenido-principal')
+<!--Usuario-->
+<div class="row mr-0 text-right">
+  <div class="col-12">
+    Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
+  </div>
+</div>
+<!--Usuario-->
 
 <div class="row mt-5 mt-lg-0">
   <div class="col">

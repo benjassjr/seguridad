@@ -4,6 +4,14 @@
 
 @endsection
 @section('contenido-principal')
+<!--Usuario-->
+<div class="row mr-0 text-right">
+  <div class="col-12">
+    Bienvenido <b>{{Auth::user()->nombre}} ({{Auth::user()->rol->nombre}})</b>
+  </div>
+</div>
+<!--Usuario-->
+
 <div class="row mt-4 mt-lg-0">
   <div class="col">
     <h3>Agregar Usuario</h3>
