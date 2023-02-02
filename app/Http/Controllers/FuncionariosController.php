@@ -52,7 +52,7 @@ class FuncionariosController extends Controller
             $validacion = '';
 
             $funcionario= DB::table('funcionarios')->select('*')->where('rut', '=', $rutqr)->first();
-        
+
         }else {
             if (Funcionario::where('rut', $rutqr2 )->exists()) {
                 $validacion = '';
@@ -64,5 +64,16 @@ class FuncionariosController extends Controller
         }
 }
         return view('funcionarios.qr',compact('funcionario', 'rutqr', 'rutqr2', 'validacion'));
+    }
+
+    public function generarqr(Funcionario $funcionario){
+        {{$miQr = QrCode::
+             size(125)
+             ->backgroundColor(250, 250, 245)
+             ->color(0, 0, 0)
+             ->margin(1)
+             ->generate('www.seguridad.lacruz.cl/funcionarios/'.$funcionario->rut.'/validar', '../public/qrcodes/'.$funcionario->rut.'.svg');
+        }}
+        return redirect()->route('funcionarios.index');
     }
 }

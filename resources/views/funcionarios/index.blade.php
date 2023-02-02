@@ -138,14 +138,15 @@
                               class="form-control @error('slug') is-invalid @enderror" value="{{$funcionario->slug}}">
                           </div>
                           <div class="form-group col-lg-6">
-                            <label for="qr">Código QR:</label>
-                            {{$miQr = QrCode::
-                                size(125)
-                                ->backgroundColor(250, 250, 245)
-                                ->color(0, 0, 0)
-                                ->margin(1)
-                                ->generate('www.'.$_SERVER["HTTP_HOST"].'/funcionarios/'.$funcionario->rut.'/validar')
-                            }}
+                            <label for="qr">Código Qr: </label>
+                            <!-- <form method="POST" action="{{route('funcionarios.generar',$funcionario->rut)}}">
+                              @csrf
+                              <button type="submit" class="btn btn-sm btn-info" data-toggle="tooltip"
+                                data-placement="top" title="Generar código qr">
+                                Génerar Codigo Qr
+                              </button>
+                            </form> -->
+                            <img src="{{ asset('qrcodes/'.$funcionario->rut.'.svg') }}" alt="">
                           </div>
                         </div>
                     </div>

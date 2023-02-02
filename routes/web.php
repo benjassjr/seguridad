@@ -46,6 +46,8 @@ Route::post('/funcionarios',[FuncionariosController::class, 'store'])->name('fun
 Route::get('/funcionarios/{funcionario}/edit',[FuncionariosController::class, 'edit'])->name('funcionarios.edit');
 Route::delete('/funcionarios/{funcionario}',[FuncionariosController::class, 'destroy'])->name('funcionarios.destroy');
 Route::get('/funcionarios/{rut}/validar',[FuncionariosController::class, 'validar'])->name('funcionarios.qr');
+Route::post('/funcionarios/{rut}/generar',[FuncionariosController::class,'generarqr'])->name('funcionarios.generar');
+
 
 Route::get('/usuarios-agregar',[UsuariosController::class, 'agregar'])->name('agregar.index');
 Route::get('/inicio',[HomeController::class,'dashboard'])->name('home.dashboard');
